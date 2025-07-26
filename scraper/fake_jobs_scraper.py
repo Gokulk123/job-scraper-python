@@ -12,7 +12,7 @@ def fetch_jobs(url="https://realpython.github.io/fake-jobs/"):
     # Checks if the HTTP status code is not 200 (which means "OK").
     # If the site didn't load successfully, it prints an error and returns an empty list.
     if response.status_code != 200:
-        print("❌ Failed to fetch jobs:", response.status_code)
+        print("Failed to fetch jobs:", response.status_code)
         return []
     
     # Loads the response HTML into BeautifulSoup using the built-in html.parser.
@@ -23,7 +23,7 @@ def fetch_jobs(url="https://realpython.github.io/fake-jobs/"):
 
     # Finds all job listings on the page.Each job is wrapped in a <div class="card-content">.
     job_cards = soup.find_all("div", class_="card-content")
-    print(f"🔍 Found {len(job_cards)} job cards.")
+    print(f"Found {len(job_cards)} job cards.")
 
     # Loops through each job card one by one.
     for card in job_cards:

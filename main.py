@@ -10,13 +10,13 @@ from scraper.fake_jobs_scraper import fetch_jobs
 # Each job is a dictionary.
 jobs = fetch_jobs()
 
-print(f"✅ Total jobs scraped: {len(jobs)}")
+print(f"Total jobs scraped: {len(jobs)}")
 
 if jobs:
     # Converts the list of dictionaries into a Pandas DataFrame, which looks like a table (rows and columns).
     df = pd.DataFrame(jobs)
     # Saves the DataFrame to a CSV file in the data/ folder.
     df.to_csv("data/jobs_2025_07.csv", index=False)
-    print("✅ CSV saved successfully.")
+    print("CSV saved successfully.")
 else:
     print("⚠️ No jobs found.")
